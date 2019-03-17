@@ -13,14 +13,18 @@ The organization hopes to use the water point census dataset to better understan
 ### The dataset:
 The water point census data was collected through mobile phone surveys by local engineers who are trained to assess the components of the water point technologies. There is one survey for handpumps and spring-fed taps and another for piped water systems, and the completed surveys are submitted to a cloud aggregator that then exports a CSV file. This analysis will focus on data from handpumps and spring-fed taps. Piped water systems are heavily monitored and managed, and when one is broken it does not go unnoticed. Handpumps, in contrast, in very remote areas can become defunct without governments taking much notice.
 
-The CSV dataset has 10,034 rows and 52 columns. Most columns have no more than 3 missing values. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not – has 863 entries for ‘not functioning’ (0), and 9,171 entries for ‘functioning’ (1). 
+## **Targeted EDA**
+The CSV dataset has 10,034 rows and 52 columns. Most columns have no more than 3 missing values. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not – has 863 entries for ‘not functioning’ (0), and 9,171 entries for ‘functioning’ (1).
 <div>
 <P ALIGN=CENTER><img src="images/dist_broken.png" alt="drawing" width="430"/>  <img src="images/dist_broken_by_country.png" alt="drawing" width="430"/> </P>
 </div>
+When the data is broken out by country, it becomes evident that the distribution of broken water points varies significantly by country:
+* India - About 2% of water points (129/5,991) broken
+* Malawi - About 9% of water points (153/1730) broken
+* Rwanda - About 12% of water points (91/743) broken
+* Uganda - About 31% of water points (489/1,567) broken
+This suggests that country could be a significant predictor of broken water points, though it's important to not that India accounts for about half of water points in the dataset, and the smaller number of data points for each of the other three countries might compromise statistical significance.
 
-
-## **Targeted EDA**
-Describe...:
 * **Heatmap**
 * **Pair plots**
 * **t-SNE plot**
