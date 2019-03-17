@@ -15,7 +15,7 @@ The water point census data was collected through mobile phone surveys by local 
 
 The CSV dataset has 10,034 rows and 52 columns. Most columns have no more than 3 missing values. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not – has 863 entries for ‘not functioning’ (0), and 9,171 entries for ‘functioning’ (1). 
 <div>
-<P ALIGN=CENTER><img src="images/dist_broken.png" alt="drawing" width="330"/>  <img src="images/dist_broken_by_country.png" alt="drawing" width="330"/> </P>
+<P ALIGN=CENTER><img src="images/dist_broken.png" alt="drawing" width="430"/>  <img src="images/dist_broken_by_country.png" alt="drawing" width="430"/> </P>
 </div>
 
 
