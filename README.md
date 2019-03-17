@@ -24,6 +24,7 @@ When the data is broken out by country, it becomes evident that the distribution
 * Malawi - About 9% of water points (153/1730) broken
 * Rwanda - About 12% of water points (91/743) broken
 * Uganda - About 31% of water points (489/1,567) broken
+
 This suggests that country could be a significant predictor of broken water points, though it's important to not that India accounts for about half of water points in the dataset, and the smaller number of data points for each of the other three countries might compromise statistical significance.
 
 * **Heatmap**
