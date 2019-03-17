@@ -2,31 +2,21 @@
 <div>
 <P ALIGN=CENTER><img src="images/water.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
-Climate change impacts are increasingly being observed ahead of predicted timeframes, while progress on national targets for greenhouse gas (GHG) emissions reductions are falling short. More dramatic global impacts like shrinking ice caps and glaciers, ocean temperature rise, and storm intensity are well-reported, **the more nuanced impacts of climate change on livelihoods and development prospects** for countries around the world are less understood.
+A Denver non-profit works with district-level governments around the world to assess communities without adequate access to clean water, identify appropriate technologies, and design and construct water points for underserved populations. In 2017, the organization conducted a full census of water points in supported districts of four countries. The census survey included information on location of each water point, the size of the population it serves, physical condition of the hardware, and whether or not the water point was functioning – among other information. The resulting dataset is intended as a tool for local governments in their planning and budgeting for clean water coverage within their jurisdictions.
 
-### **Question of Climate Justice**
-**Because increases in GHG emissions and reductions in carbon sinks are generally a bi-product of economic development, it stands to reason that countries that have contributed more to climate change have more favorable development outcomes** than those that have contributed little. Extending from that logic, **countries with lower development outcomes are more vulnerable to the impacts of climate change**, as a higher proportion of the population is dependent on natural resources for their direct livelihoods. Smallholder farmers around the world, for example, increasingly face crop losses from shifting annual rain patterns and extreme weather events.
+The organization hopes to use the water point census dataset to better understand the factors that contribute to the likelihood of a waterpoint breaking. In their annual planning, they want to be able to guide local partners on which water points to inspect and earmark funds to support maintenance. This could greatly improve maintenance response times and, ideally, help local governments in their planning to ensure total coverage of clean water access for their constituents.
+
 <div>
 <P ALIGN=CENTER><img src="images/developed.png" alt="drawing" width="390"/>  <img src="images/developing1.png" alt="drawing" width="390"/></p></div>
 
 ### The analytics questions:
-* Do countries with the highest GHG emissions have higher development outcomes than countries with low emissions?
-* Are high and low emitters more or less impacted by the effects of climate change?
+* What are the key predictors of whether or not a water point is functioning on any given day?
+* Is the organization able to identify with reasonable certainty which water points are likely to need maintenance or replacement?
 
 ### The dataset:
-* The analysis was conducted using a dataset from the online World Bank Data Catalog that **compiles national-level summary data on GHG emissions, development outcomes, and climate change impacts for all countries from 1990 - 2010**.
-* The original CSV dataset contains 13,512 rows and 28 columns.
-Once imported and reshaped, the Pandas dataframe contained only 233 rows with a few hundred fields.
-* After some initial exploratory data analysis (EDA), fields were reduced to the following most relevant for answering the research questions:
-  - **CO2 emissions (MT) per capita** - captures direct emissions and deforestation)
-  - **Per capita Gross National Income (GNI)**
-  - **Human Development Index (HDI) score** - a statistic composite index of human-level development outcomes, such as life expectancy and education.
-  - **Population living below the international poverty line ($1.25)**  
-  - **% of population living below 5 meters above sea level**
-  - **% of population exposed to droughts, floods, and extreme temperatures**
-* Records with too many missing annual values on under these indicators were removed.
-* Annual data were aggregated for each, producing a mean value for each feature.
+The water point census data was collected through mobile phone surveys by local engineers who are trained to assess the components of the water point technologies. There is one survey for handpumps and spring-fed taps and another for piped water systems, and the completed surveys are submitted to a cloud aggregator that then exports a CSV file. This analysis will focus on data from handpumps and spring-fed taps. Piped water systems are heavily monitored and managed, and when one is broken it does not go unnoticed. Handpumps, in contrast, in very remote areas can become defunct without governments taking much notice.
 
+The CSV dataset has 10,034 rows and 52 columns. Most columns have no more than 3 missing values. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not – has 863 entries for ‘not functioning’ (0), and 9,171 entries for ‘functioning’ (1). 
 
 ## **Targeted EDA**
 Separately plotted logged values of CO2 emissions as a function of:
