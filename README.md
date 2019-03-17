@@ -1,6 +1,6 @@
 # **Is there Water?**
 <div>
-<P ALIGN=CENTER><img src="images/water.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="800"/></P></div>
+<P ALIGN=CENTER><img src="images/water.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
 Climate change impacts are increasingly being observed ahead of predicted timeframes, while progress on national targets for greenhouse gas (GHG) emissions reductions are falling short. More dramatic global impacts like shrinking ice caps and glaciers, ocean temperature rise, and storm intensity are well-reported, **the more nuanced impacts of climate change on livelihoods and development prospects** for countries around the world are less understood.
 
