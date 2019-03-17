@@ -16,7 +16,7 @@ The water point census data was collected through mobile phone surveys by local 
 ## **Targeted EDA**
 The CSV dataset has 10,034 rows and 52 columns. Most columns have no more than 3 missing values. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not – has 863 entries for ‘not functioning’ (0), and 9,171 entries for ‘functioning’ (1).
 <div>
-<P ALIGN=CENTER><img src="images/dist_broken.png" alt="drawing" width="430"/>  <img src="images/dist_broken_by_country.png" alt="drawing" width="430"/> </P>
+<P ALIGN=CENTER><img src="images/dist_broken2.png" alt="drawing" width="430"/>  <img src="images/dist_broken_by_country2.png" alt="drawing" width="430"/> </P>
 </div>
 When the data is broken out by country, it becomes evident that the distribution of broken water points varies significantly by country:
 * India - About 2% of water points (129/5,991) broken
