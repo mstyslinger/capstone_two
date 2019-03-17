@@ -28,6 +28,12 @@ To investigate further, the feature data were split into two categories - **leas
 <P ALIGN=CENTER><img src="images/below5m.png" alt="drawing" width="330"/>  <img src="images/extreme_weather.png" alt="drawing" width="330"/> </P>
 </div>
 
+## Minimum viable product:
+Identify coefficients using logistic regression and feature importances using random forests. Tune to optimal hyperparameters. Make a recommendation based on the insights and suggestions for future work.
+
+## MVP +:
+Apply a Naïve Bayes model to the dataset to see how it might be able to predict whether water points are broken or not.
+
 ## **Logistic Regression**
 Some lead up...
 <div>
