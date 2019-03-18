@@ -76,6 +76,11 @@ Identify coefficients using logistic regression and feature importances using ra
 ## MVP +:
 Apply a Naïve Bayes model to the dataset to see how it might be able to predict whether water points are broken or not.
 
+## **Random Forest Classifier**
+Some lead up...
+<div>
+<P ALIGN=CENTER><img src="images/feature_importances.png" alt="drawing" width="600"/></div>
+
 ## **Logistic Regression**
 Some lead up...
 <div>
