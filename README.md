@@ -52,7 +52,7 @@ Original construction does not seem to have obvious influence on whether or not 
 <P ALIGN=CENTER><img src="images/heat4.png" alt="drawing" width="700"/> </P>
 </div>
 
-Some of the stronger correlations with whether or not the water point is functions:
+Some of the stronger correlations with whether or not the water point is functioning:
 * Whether or not it's in India                              
 * If it is a handpump                                       
 * Number of households in the community                      
