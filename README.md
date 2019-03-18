@@ -48,8 +48,8 @@ There's notable variation by type, but less so in India. The technologies with t
 Original construction does not seem to have obvious influence on whether or not the water point is functioning or not
 
 ### Correlation heatmap - categorical features (country and technology type) dummied:
-div>
-<P ALIGN=CENTER><img src="images/heatmap.png" alt="drawing" width="550"/> </P>
+<div>
+<P ALIGN=CENTER><img src="images/heatmap.png" alt="drawing" width="700"/> </P>
 </div>
 
 * **Pair plots**
