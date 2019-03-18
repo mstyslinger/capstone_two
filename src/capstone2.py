@@ -23,6 +23,11 @@ def clean(data):
               'taps_past_lifespan', 'well_past_lifespan', 'pump_past_lifespan', 'apron_past_lifespan', 'overall_state_of_water_point']
     for i in blanks:
         df[i].replace(" ", "0", inplace=True)
+    # replace water point technologies having less than 150 entries with "other"
+    other_technologies = ['Pond', 'Unprotected Spring', 'Tara Direct Action Pump', 'Malda Handpump', 'Unprotected Well', 'River/Stream', 'Stream', 'Scoophole', 'Mark Iii Handpump',
+                          'Solar Powered Borehole', 'River', 'Unprotected Shallow Well', 'Elephant Pump', 'Mark Iv Handpump', 'Sabmisable Pump', 'Canal', 'Artisan Well', 'Borehole', 'Climax']
+    for i in other_technologies:
+        df['water_point_type'].replace(i, "other", inplace=True)
     # Other replacement:
     df['spring_protection_past_lifespan'].replace("#VALUE!", "0", inplace=True)
     df['age_since_original_construction'].replace(" ", "2017", inplace=True)
