@@ -13,7 +13,7 @@ The organization hopes to use the water point census dataset to better understan
 ### The dataset:
 The water point census data was collected through mobile phone surveys by local engineers who are trained to assess the components of the water point technologies. There is one survey for handpumps and spring-fed taps and another for piped water systems, and the completed surveys are submitted to a cloud aggregator that then exports a CSV file. This analysis will focus on data from handpumps and spring-fed taps. Piped water systems are heavily monitored and managed, and when one is broken it does not go unnoticed. Handpumps, in contrast, in very remote areas can become defunct without governments taking much notice.
 
-## **Targeted EDA**
+## **Exploratory data analysis (EDA)**
 The CSV dataset has 10,034 rows and 52 columns. Most columns have no more than 3 missing values. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not – has 863 entries for ‘not functioning’ (0), and 9,171 entries for ‘functioning’ (1).
 <div>
 <P ALIGN=CENTER><img src="images/dist_broken2.png" alt="drawing" width="430"/>  <img src="images/dist_broken_by_country2.png" alt="drawing" width="430"/> </P>
@@ -49,7 +49,7 @@ Original construction does not seem to have obvious influence on whether or not 
 
 ### Correlation heatmap - categorical features (country and technology type) dummied:
 <div>
-<P ALIGN=CENTER><img src="images/heatmap3.png" alt="drawing" width="600"/> </P>
+<P ALIGN=CENTER><img src="images/heatmap4.png" alt="drawing" width="600"/> </P>
 </div>
 
 Some of the stornger correlations with whether or not the water point is functions:
