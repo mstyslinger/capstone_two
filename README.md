@@ -49,8 +49,13 @@ Original construction does not seem to have obvious influence on whether or not 
 
 ### Correlation heatmap - categorical features (country and technology type) dummied:
 <div>
-<P ALIGN=CENTER><img src="images/heatmap.png" alt="drawing" width="700"/> </P>
+<P ALIGN=CENTER><img src="images/heatmap3.png" alt="drawing" width="700"/> </P>
 </div>
+
+Some of the stornger correlations with whether or not the water point is functions:
+* Whether or not it's in India                              * If it is "improved" and the water source is protected
+* If it is a handpump                                       * Deemed to have adequate water quality
+* Number of households in the community                     * Engineer has deemed it in "good overall health" 
 
 * **Pair plots**
 * **t-SNE plot**
