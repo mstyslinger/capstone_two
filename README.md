@@ -40,7 +40,18 @@ This suggests that country could be a significant predictor of broken water poin
 
 There's notable variation by type, but less so in India. The technologies with the highest rate of being broken fall into the "other" category, which are a number of different technologies, each occuring less than 150 times in the dataset. There is enough variation among the 7 main technology types to suggest it could be a useful predictor.
 
-* **Heatmap**
+### Age since original construction plotted against whether the water point is broken or functioning
+<div>
+<P ALIGN=CENTER><img src="images/broke_age.png" alt="drawing" width="425"/> </P>
+</div>
+
+Original construction does not seem to have obvious influence on whether or not the water point is functioning or not
+
+### Correlation heatmap - categorical features (country and technology type) dummied:
+div>
+<P ALIGN=CENTER><img src="images/heatmap.png" alt="drawing" width="550"/> </P>
+</div>
+
 * **Pair plots**
 * **t-SNE plot**
 
