@@ -48,13 +48,13 @@ There's notable variation by type, but less so in India. The technologies with t
 Original construction does not seem to have obvious influence on whether or not the water point is functioning or not
 
 ### Correlation heatmap - categorical features (country and technology type) dummied:
+![]({% static 'images/heatmap3.png' %})
+
 
 <div>
-<P ALIGN=CENTER><img src="images/heatmap4.png" alt="drawing" width="200"/> </P></div>
-
-<div>
-<P ALIGN=CENTER><img src="images/heatmap4.png" alt="drawing" width="200"/> </P>
+<P ALIGN=CENTER><img src="images/heatmap4.png" alt="drawing" width="500"/> </P>
 </div>
+
 
 Some of the stornger correlations with whether or not the water point is functions:
 * Whether or not it's in India                              * If it is "improved" and the water source is protected
