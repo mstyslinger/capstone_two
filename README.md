@@ -52,14 +52,16 @@ Original construction does not seem to have obvious influence on whether or not 
 <P ALIGN=CENTER><img src="images/heatmap5.png" alt="drawing" width="500"/> </P>
 </div>
 
+Some of the stronger correlations with whether or not the water point is functions:
+* Whether or not it's in India                              
+* If it is a handpump                                       
+* Number of households in the community                      
+* If it is "improved" and the water source is protected
+* Deemed to have adequate water quality
+* Engineer has deemed it in "good overall health"
 
-Some of the stornger correlations with whether or not the water point is functions:
-* Whether or not it's in India                              * If it is "improved" and the water source is protected
-* If it is a handpump                                       * Deemed to have adequate water quality
-* Number of households in the community                     * Engineer has deemed it in "good overall health" 
-
-* **Pair plots**
-* **t-SNE plot**
+**Pair plots**
+**t-SNE plot**
 
 The data are not normally distributed, but **there appears to be a linear relationship with each**. Data points, however, are clustered at the low end on both axis.
 To investigate further, the feature data were split into two categories - **least developed** and **most developed countries** - using the median value for each feature:
