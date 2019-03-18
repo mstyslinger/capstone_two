@@ -49,7 +49,7 @@ Original construction does not seem to have obvious influence on whether or not 
 
 ### Correlation heatmap - categorical features (country and technology type) dummied:
 <div>
-<P ALIGN=CENTER><img src="images/heatmap3.png" alt="drawing" width="700"/> </P>
+<P ALIGN=CENTER><img src="images/heatmap3.png" alt="drawing" width="600"/> </P>
 </div>
 
 Some of the stornger correlations with whether or not the water point is functions:
