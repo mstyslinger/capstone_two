@@ -27,6 +27,11 @@ When the data is broken out by country, it becomes evident that the distribution
 
 This suggests that country could be a significant predictor of broken water points, though it's important to not that India accounts for about half of water points in the dataset, and the smaller number of data points for each of the other three countries might compromise statistical significance.
 
+### Water points broken by type (mean of values 1 or 0):
+<div>
+<P ALIGN=CENTER><img src="images/broke_by_tech.png" alt="drawing" width="430"/>  </P>
+</div>
+
 * **Heatmap**
 * **Pair plots**
 * **t-SNE plot**
