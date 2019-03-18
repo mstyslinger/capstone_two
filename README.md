@@ -27,14 +27,18 @@ When the data is broken out by country, it becomes evident that the distribution
 
 This suggests that country could be a significant predictor of broken water points, though it's important to not that India accounts for about half of water points in the dataset, and the smaller number of data points for each of the other three countries might compromise statistical significance.
 
-### Water points broken by type (mean of values 1 or 0) - overall and by country
+### Water points broken by type of technology (mean of values 1 or 0) - overall and by country
 <div>
 <P ALIGN=CENTER><img src="images/broke_by_tech.png" alt="drawing" width="530"/>  </P>
 </div>
 <div>
 <P ALIGN=CENTER><img src="images/india_broke_by_type.png" alt="drawing" width="375"/><img src="images/malawi_broke_by_type.png" alt="drawing" width="375"/>  </P>
 </div>
+<div>
+<P ALIGN=CENTER><img src="images/rwanda_broke_by_type.png" alt="drawing" width="375"/><img src="images/uganda_broke_by_type.png" alt="drawing" width="375"/>  </P>
+</div>
 
+There's notable variation by type, but less so in India. The technologies with the highest rate of being broken fall into the "other" category, which are a number of different technologies, each occuring less than 150 times in the dataset. There is enough variation among the 7 main technology types to suggest it could be a useful predictor.
 
 * **Heatmap**
 * **Pair plots**
