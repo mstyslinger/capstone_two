@@ -16,7 +16,7 @@ The water point census data was collected through mobile phone surveys by local 
 ## **Exploratory data analysis (EDA)**
 The CSV dataset has 10,034 rows and 52 columns. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not? – is imbalanced, and train-test splits were made with stratification to maintain the proportionality of the original datset. After data cleaning, the resulting dataframe has 10,031 rows and 17 columns. A dataframe was also created with dummied categorical features, resulting in one dataset with 24 columns (drop first = True) and another with 27 (all dummies included).
 <div>
-<P ALIGN=CENTER><img src="images/dist_broken2.png" alt="drawing" width="430"/>  <img src="images/broke_by_country2.png" alt="drawing" width="430"/> </P>
+<P ALIGN=CENTER><img src="images/dist_broken2.png" alt="drawing" width="430"/>  <img src="images/broke_by_country2.png" alt="drawing" width="330"/> </P>
 </div>
 
 When the data is broken out by country, it becomes evident that the distribution of broken water points varies significantly by country:
