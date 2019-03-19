@@ -14,7 +14,7 @@ The organization hopes to use the water point census dataset to better understan
 The water point census data was collected through mobile phone surveys by local engineers who are trained to assess the components of the water point technologies. There is one survey for handpumps and spring-fed taps and another for piped water systems, and the completed surveys are submitted to a cloud aggregator that then exports a CSV file. This analysis will focus on data from handpumps and spring-fed taps. Piped water systems are heavily monitored and managed, and when one is broken it does not go unnoticed. Handpumps, in contrast, in very remote areas can become defunct without governments taking much notice.
 
 ## **Exploratory data analysis (EDA)**
-The CSV dataset has 10,034 rows and 52 columns. Most columns have no more than 3 missing values. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not – has 863 entries for ‘not functioning’ (0), and 9,171 entries for ‘functioning’ (1).
+The CSV dataset has 10,034 rows and 52 columns. Most columns have no more than 3 missing values. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not – has 863 entries for ‘not functioning’ (0), and 9,171 entries for ‘functioning’ (1) - imbalanced. After data cleaning, the resulting dataframe has 10,031 rows and 17 columns. A dataframe was also created with dummied categorical features, resulting in one dataset with 24 columns (drop first = True) and another with 27 (all dummies included).
 <div>
 <P ALIGN=CENTER><img src="images/dist_broken2.png" alt="drawing" width="430"/>  <img src="images/broke_by_country2.png" alt="drawing" width="430"/> </P>
 </div>
@@ -70,13 +70,13 @@ To investigate further, the feature data were split into two categories - **leas
 <P ALIGN=CENTER><img src="images/below5m.png" alt="drawing" width="330"/>  <img src="images/extreme_weather.png" alt="drawing" width="330"/> </P>
 </div>
 
-## Minimum viable product:
-Identify coefficients using logistic regression and feature importances using random forests. Tune to optimal hyperparameters. Make a recommendation based on the insights and suggestions for future work.
+## Model fitting:
+MVP: Identify coefficients using logistic regression and feature importances using random forests. Tune to optimal hyperparameters. Make a recommendation based on the insights and suggestions for future work.
 
-## MVP +:
-Apply a Naïve Bayes model to the dataset to see how it might be able to predict whether water points are broken or not.
+### Train, test, and holdout datasets:
+A holdout dataset (for final model testing) was split off from the full, cleaned dummied dataframe with size 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set.
 
-## **Random Forest Classifier**
+### **Random Forest Classifier**
 Some lead up...
 <div>
 <P ALIGN=CENTER><img src="images/feature_importances.png" alt="drawing" width="600"/></div>
