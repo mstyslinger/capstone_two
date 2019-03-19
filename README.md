@@ -76,13 +76,16 @@ MVP: Identify coefficients using logistic regression and feature importances usi
 ### Train, test, and holdout datasets:
 A holdout dataset (for final model testing) was split off from the full, cleaned dummied dataframe with size 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set.
 
+### **Random Forest Classifier**
 <div>
 <P ALIGN=CENTER><img src="images/random_forest2.png" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
-### **Random Forest Classifier**
 Some lead up...
+* n_estimators =
+* max_depth = 
+* max_features =
 <div>
-<P ALIGN=CENTER><img src="images/feature_importances.png" alt="drawing" width="600"/></div>
+<P ALIGN=CENTER><img src="images/feat_imp.png" alt="drawing" width="600"/></div>
 
 ## **Logistic Regression**
 Some lead up...
