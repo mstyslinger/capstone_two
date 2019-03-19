@@ -25,13 +25,14 @@ When the data is broken out by country, it becomes evident that the distribution
 * Rwanda - About 12% of water points (91/743) broken
 * Uganda - About 31% of water points (489/1,567) broken
 
-This suggests that country could be a significant predictor of broken water points, though it's important to not that India accounts for about half of water points in the dataset, and the smaller number of data points for each of the other three countries might compromise statistical significance.
+This suggests that country could be a significant predictor of broken water points. India accounts for about 60% of the water points in the dataset, and it also has the lowest incidence of broken water points. Therefore, 'India' is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
 
 ### Water points broken by type of technology (mean of values 1 or 0) - overall and by country
 <div>
 <P ALIGN=CENTER><img src="images/broke_by_tech.png" alt="drawing" width="530"/>  </P>
 </div>
 <div>
+The most common technology in the dataset is the "Phe 6 Handpump," and the technology is also more or less tied for having the lowest proportion of being broken. Therefore, it is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
 <P ALIGN=CENTER><img src="images/india_broke_by_type.png" alt="drawing" width="375"/><img src="images/malawi_broke_by_type.png" alt="drawing" width="375"/>  </P>
 </div>
 <div>
