@@ -92,43 +92,7 @@ Some interpretation...
 ## **Logistic Regression**
 Some lead up...
 
-Optimization terminated successfully.
-         Current function value: 0.071329
-         Iterations 10
-                                      Results: Logit
-==========================================================================================
-Model:              Logit                                      Pseudo R-squared: 0.757    
-Dependent Variable: water_available_from_point_on_day_of_visit AIC:              955.7210 
-Date:               2019-03-18 22:04                           BIC:              1091.0613
-No. Observations:   6419                                       Log-Likelihood:   -457.86  
-Df Model:           19                                         LL-Null:          -1881.9  
-Df Residuals:       6399                                       LLR p-value:      0.0000   
-Converged:          1.0000                                     Scale:            1.0000   
-No. Iterations:     10.0000                                                               
-------------------------------------------------------------------------------------------
-                                           Coef.  Std.Err.    z     P>|z|   [0.025  0.975]
-------------------------------------------------------------------------------------------
-geo_level_1_Malawi                        -1.8831   0.3793  -4.9641 0.0000 -2.6266 -1.1396
-geo_level_1_Rwanda                        -5.0479   1.2632  -3.9961 0.0001 -7.5237 -2.5720
-geo_level_1_Uganda                        -4.1380   1.2263  -3.3743 0.0007 -6.5416 -1.7344
-water_point_type_Mark Ii Handpump          0.2625   0.3639   0.7213 0.4707 -0.4508  0.9757
-water_point_type_Phe 6 Handpump            0.8703   0.2960   2.9406 0.0033  0.2902  1.4504
-water_point_type_Protected Deep Borehole   4.4543   1.4178   3.1418 0.0017  1.6755  7.2330
-water_point_type_Protected Shallow Well    4.3923   1.2613   3.4823 0.0005  1.9202  6.8645
-water_point_type_Protected Spring          6.9179   1.3439   5.1478 0.0000  4.2840  9.5518
-water_point_type_other                    -1.0588   0.5741  -1.8441 0.0652 -2.1841  0.0665
-spring_protection_past_lifespan            1.4209   0.7487   1.8977 0.0577 -0.0467  2.8884
-taps_past_lifespan                        -2.1311   0.8038  -2.6513 0.0080 -3.7064 -0.5557
-well_past_lifespan                        -0.7633   0.2598  -2.9385 0.0033 -1.2724 -0.2542
-pump_past_lifespan                        -0.2229   0.2564  -0.8696 0.3845 -0.7254  0.2795
-overall_state_of_water_point              -7.4780   0.6302 -11.8654 0.0000 -8.7133 -6.2428
-water_point_improved                      16.8642   1.3353  12.6300 0.0000 14.2472 19.4813
-source_protected                           0.1513   0.3139   0.4821 0.6297 -0.4639  0.7665
-number_of_users_meets_govt_standard       -0.0503   0.2643  -0.1905 0.8489 -0.5683  0.4676
-adequate_water_quality                     4.5818   0.7068   6.4822 0.0000  3.1965  5.9672
-adequate_water_quantity                    0.7210   0.3911   1.8434 0.0653 -0.0456  1.4876
-water_point_in_good_overall_condition     -4.7777   0.6764  -7.0635 0.0000 -6.1034 -3.4520
-==========================================================================================
+<P ALIGN=CENTER><img src="images/log_result.png" alt="drawing" width="600"/></div>
 
 Some interpretations...
 
