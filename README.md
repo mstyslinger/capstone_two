@@ -60,15 +60,11 @@ Some of the stronger correlations with whether or not the water point is functio
 * Deemed to have adequate water quality
 * Engineer has deemed it in "good overall health"
 
-**Pair plots**
-**t-SNE plot**
+### Pair plots:
+Plots and interpretation...
 
-The data are not normally distributed, but **there appears to be a linear relationship with each**. Data points, however, are clustered at the low end on both axis.
-To investigate further, the feature data were split into two categories - **least developed** and **most developed countries** - using the median value for each feature:
-
-<div>
-<P ALIGN=CENTER><img src="images/below5m.png" alt="drawing" width="330"/>  <img src="images/extreme_weather.png" alt="drawing" width="330"/> </P>
-</div>
+### t-SNE plot:
+Plot and interpretation...
 
 ## Model fitting:
 MVP: Identify coefficients using logistic regression and feature importances using random forests. Tune to optimal hyperparameters. Make a recommendation based on the insights and suggestions for future work.
@@ -76,7 +72,7 @@ MVP: Identify coefficients using logistic regression and feature importances usi
 ### Train, test, and holdout datasets:
 A holdout dataset (for final model testing) was split off from the full, cleaned dummied dataframe with size 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set.
 
-### **Random Forest Classifier**
+### Random Forest Classifier:
 <div>
 <P ALIGN=CENTER><img src="images/random_forest2.png" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
@@ -89,10 +85,10 @@ Some lead up...
 
 Some interpretation...
 
-## **Logistic Regression**
+## Logistic Regression:
 Some lead up...
 
-<P ALIGN=CENTER><img src="images/log_result.png" alt="drawing" width="600"/></div>
+<P ALIGN=CENTER><img src="images/log_result.jpg" alt="drawing" width="600"/></div>
 
 Some interpretations...
 
