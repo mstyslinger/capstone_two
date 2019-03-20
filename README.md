@@ -77,11 +77,10 @@ A holdout dataset (for final model testing) was split off from the full, cleaned
 <div>
 <P ALIGN=CENTER><img src="images/random_forest2.png" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
-Some lead up...
-
-
+The training dataset was fit to a random forest classifier model - a supervised ensemble machine learning method - to determine the most important features for predicting the target: water points working or not. Resulting feature importances plotted:
 <div>
-<P ALIGN=CENTER><img src="images/feat_importances_1.png" alt="drawing" width="700"/></div>
+<P ALIGN=CENTER><img src="images/feat_importances_1.png" alt="drawing" width="800"/></div>
+  
 **5 features account for 5% or more of the variance, with one feature accounting for over 40%**
 
 The model was run with various n_estimators to identify the best precision score - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked):
@@ -106,7 +105,8 @@ The feature that was identified as accounting for ~40% of variance in the data (
 
 **Revised feature importances:**
 <div>
-<P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="700"/></div>
+<P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="800"/></div>
+  
 **Confusion matrix for model with n_estimators=10 and 'overall_state_of_water-point' removed:**<br />
 
 **Revised precision score:**<br />
