@@ -90,15 +90,15 @@ The model was run with various n_estimators to identify the best --- score - fal
 * Recall with 25 estimators: 0.9931833674164963
 * Recall with 10 estimators: 0.9897750511247444
 
-**Confusion matrix for model with n_estimators=10**
-True negative | False positive
---------------|---------------
-      0.07    |        0       
---------------|---------------
-Fals negative | True positive
---------------|---------------
-      0.01    |        0.9       
---------------|---------------
+**Confusion matrix for model with n_estimators=10**<br />
+True negative | False positive<br />
+--------------|---------------<br />
+      0.07    |        0<br />
+--------------|---------------<br />
+Fals negative | True positive<br />
+--------------|---------------<br />
+      0.01    |        0.9<br />
+--------------|---------------<br />
 
 **TOO GOOD!**
 
