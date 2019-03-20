@@ -78,8 +78,8 @@ A holdout dataset (for final model testing) was split off from the full, cleaned
 <P ALIGN=CENTER><img src="images/random_forest2.png" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
 Some lead up...
-* max_depth = 
-* max_features =
+
+
 <div>
 <P ALIGN=CENTER><img src="images/feat_imp.png" alt="drawing" width="600"/></div>
 * 6 features account for 5% or more of the variance, with one feature accounting for 40%
@@ -103,6 +103,17 @@ False negative| True positive<br />
 **TOO GOOD!**
 
 The feature that was identified as accounting for ~40% of variance in the data (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed.
+
+**Revised feature importances:**
+<div>
+<P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="600"/></div>
+**Confusion matrix for model with n_estimators=10 and 'overall_state_of_water-point' removed:**<br />
+**Revised -- score:**
+* Recall with 100 estimators: 0.995
+* Recall with 50 estimators: 0.993
+* Recall with 25 estimators: 0.993
+
+**Confusion matrix for model with n_estimators=50:**<br />
 
 
 ## Logistic Regression:
