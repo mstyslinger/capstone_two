@@ -78,13 +78,32 @@ A holdout dataset (for final model testing) was split off from the full, cleaned
 <P ALIGN=CENTER><img src="images/random_forest2.png" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
 Some lead up...
-* n_estimators =
 * max_depth = 
 * max_features =
 <div>
 <P ALIGN=CENTER><img src="images/feat_imp.png" alt="drawing" width="600"/></div>
+* 6 features account for 5% or more of the variance, with one feature accounting for 40%
 
-Some interpretation...
+The model was run with various n_estimators to identify the best --- score - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked):
+* Recall with 100 estimators: 0.9952283571915473
+* Recall with 50 estimators: 0.9931833674164963
+* Recall with 25 estimators: 0.9931833674164963
+* Recall with 10 estimators: 0.9897750511247444
+
+**Confusion matrix for model with n_estimators=10**
+True negative | False positive
+--------------|---------------
+      0.07    |        0       
+--------------|---------------
+Fals negative | True positive
+--------------|---------------
+      0.01    |        0.9       
+--------------|---------------
+
+**TOO GOOD!**
+
+The feature that was identified as accounting for ~40% of variance in the data (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed.
+
 
 ## Logistic Regression:
 Some lead up...
