@@ -81,7 +81,7 @@ Some lead up...
 
 
 <div>
-<P ALIGN=CENTER><img src="images/feat_importances_1.png" alt="drawing" width="600"/></div>
+<P ALIGN=CENTER><img src="images/feat_importances_1.png" alt="drawing" width="700"/></div>
 **5 features account for 5% or more of the variance, with one feature accounting for over 40%**
 
 The model was run with various n_estimators to identify the best precision score - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked):
@@ -106,16 +106,17 @@ The feature that was identified as accounting for ~40% of variance in the data (
 
 **Revised feature importances:**
 <div>
-<P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="600"/></div>
+<P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="700"/></div>
 **Confusion matrix for model with n_estimators=10 and 'overall_state_of_water-point' removed:**<br />
-**Revised precision score:**
-* Recall with 100 estimators: 0.947
-* Recall with 50 estimators: 0.947
-* Recall with 25 estimators: 0.948
-* Recall with 10 estimators: 0.953
-* Recall with 5 estimators: 0.95
-* Recall with 2 estimators: 0.96
-* Recall with 1 estimator: 0.953
+
+**Revised precision score:**<br />
+* Recall with 100 estimators: 0.947<br />
+* Recall with 50 estimators: 0.947<br />
+* Recall with 25 estimators: 0.948<br />
+* Recall with 10 estimators: 0.953<br />
+* Recall with 5 estimators: 0.95<br />
+* Recall with 2 estimators: 0.96<br />
+* Recall with 1 estimator: 0.953<br />
 
 **Confusion matrix for revised model with n_estimators=10:**<br />
 True negative | False positive<br />
