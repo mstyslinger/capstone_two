@@ -101,7 +101,7 @@ False negative| True positive<br />
 
 **TOO GOOD!**
 
-The feature that was identified as accounting for ~40% of variance in the data (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed.
+The feature that was identified as accounting for more than 40% of variance in the data (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed.
 
 **Revised feature importances:**
 <div>
