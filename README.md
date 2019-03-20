@@ -71,7 +71,7 @@ Plot and interpretation...
 MVP: Identify coefficients using logistic regression and feature importances using random forests. Tune to optimal hyperparameters. Make a recommendation based on the insights and suggestions for future work.
 
 ### Train, test, and holdout datasets:
-A holdout dataset (for final model testing) was split off from the full, cleaned dummied dataframe with size 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set.
+A holdout dataset (for final model testing) was split off from the full, cleaned dummied dataframe with 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set (80-20 split).
 
 ### Random Forest Classifier:
 <div>
@@ -90,12 +90,12 @@ The model was run with various n_estimators to identify the best --- score - fal
 * Recall with 25 estimators: 0.993
 * Recall with 10 estimators: 0.989
 
-**Confusion matrix for model with n_estimators=10**<br />
+**Confusion matrix for model with n_estimators=10:**<br />
 True negative | False positive<br />
 --------------|---------------<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br />
 --------------|---------------<br />
-Fals negative | True positive<br />
+False negative| True positive<br />
 --------------|---------------<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9<br />
 --------------|---------------<br />
