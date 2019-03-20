@@ -93,11 +93,11 @@ The model was run with various n_estimators to identify the best --- score - fal
 **Confusion matrix for model with n_estimators=10**<br />
 True negative | False positive<br />
 --------------|---------------<br />
-      0.07    |        0      <br />
+      <p>0.07    |        0      </p><br />
 --------------|---------------<br />
 Fals negative | True positive<br />
 --------------|---------------<br />
-      0.01    |        0.9    <br />
+      <p>0.01    |        0.9    </p><br />
 --------------|---------------<br />
 
 **TOO GOOD!**
