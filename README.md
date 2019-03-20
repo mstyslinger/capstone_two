@@ -81,8 +81,8 @@ Some lead up...
 
 
 <div>
-<P ALIGN=CENTER><img src="images/feat_imp.png" alt="drawing" width="600"/></div>
-* 6 features account for 5% or more of the variance, with one feature accounting for 40%
+<P ALIGN=CENTER><img src="images/feat_importances_1.png" alt="drawing" width="600"/></div>
+**5 features account for 5% or more of the variance, with one feature accounting for over 40%**
 
 The model was run with various n_estimators to identify the best precision score - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked):
 * Precision with 100 estimators: 0.987
