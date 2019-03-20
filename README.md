@@ -85,10 +85,10 @@ Some lead up...
 * 6 features account for 5% or more of the variance, with one feature accounting for 40%
 
 The model was run with various n_estimators to identify the best --- score - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked):
-* Recall with 100 estimators: 0.9952283571915473
-* Recall with 50 estimators: 0.9931833674164963
-* Recall with 25 estimators: 0.9931833674164963
-* Recall with 10 estimators: 0.9897750511247444
+* Recall with 100 estimators: 0.995
+* Recall with 50 estimators: 0.993
+* Recall with 25 estimators: 0.993
+* Recall with 10 estimators: 0.989
 
 **Confusion matrix for model with n_estimators=10**<br />
 True negative | False positive<br />
@@ -97,7 +97,7 @@ True negative | False positive<br />
 --------------|---------------<br />
 Fals negative | True positive<br />
 --------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9<br />
 --------------|---------------<br />
 
 **TOO GOOD!**
