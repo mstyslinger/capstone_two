@@ -84,11 +84,11 @@ Some lead up...
 <P ALIGN=CENTER><img src="images/feat_imp.png" alt="drawing" width="600"/></div>
 * 6 features account for 5% or more of the variance, with one feature accounting for 40%
 
-The model was run with various n_estimators to identify the best --- score - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked):
-* Recall with 100 estimators: 0.995
-* Recall with 50 estimators: 0.993
-* Recall with 25 estimators: 0.993
-* Recall with 10 estimators: 0.989
+The model was run with various n_estimators to identify the best precision score - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked):
+* Precision with 100 estimators: 0.987
+* Precision with 50 estimators: 0.987
+* Precision with 25 estimators: 0.987
+* Precision with 10 estimators: 0.987
 
 **Confusion matrix for model with n_estimators=10:**<br />
 True negative | False positive<br />
@@ -108,12 +108,24 @@ The feature that was identified as accounting for ~40% of variance in the data (
 <div>
 <P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="600"/></div>
 **Confusion matrix for model with n_estimators=10 and 'overall_state_of_water-point' removed:**<br />
-**Revised -- score:**
-* Recall with 100 estimators: 0.995
-* Recall with 50 estimators: 0.993
-* Recall with 25 estimators: 0.993
+**Revised precision score:**
+* Recall with 100 estimators: 0.947
+* Recall with 50 estimators: 0.947
+* Recall with 25 estimators: 0.948
+* Recall with 10 estimators: 0.953
+* Recall with 5 estimators: 0.95
+* Recall with 2 estimators: 0.96
+* Recall with 1 estimator: 0.953
 
-**Confusion matrix for model with n_estimators=50:**<br />
+**Confusion matrix for revised model with n_estimators=10:**<br />
+True negative | False positive<br />
+--------------|---------------<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br />
+--------------|---------------<br />
+False negative| True positive<br />
+--------------|---------------<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.89<br />
+--------------|---------------<br />
 
 
 ## Logistic Regression:
