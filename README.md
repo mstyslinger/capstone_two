@@ -29,14 +29,14 @@ This suggests that country could be a significant predictor of broken water poin
 
 ### Water points broken by type of technology (mean of values 1 or 0) - overall and by country
 <div>
-<P ALIGN=CENTER><img src="images/broke_by_tech.png" alt="drawing" width="530"/>  </P>
+<P ALIGN=CENTER><img src="images/function_by_tech.png" alt="drawing" width="530"/>  </P>
 </div>
 <div>
 The most common technology in the dataset is the "Phe 6 Handpump," and the technology is also more or less tied for having the lowest proportion of being broken. Therefore, it is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
-<P ALIGN=CENTER><img src="images/india_broke_by_type.png" alt="drawing" width="375"/><img src="images/malawi_broke_by_type.png" alt="drawing" width="375"/>  </P>
+<P ALIGN=CENTER><img src="images/india_broke_by_type.png" alt="drawing" width="375"/><img src="images/function_by_tech_malawi.png" alt="drawing" width="375"/>  </P>
 </div>
 <div>
-<P ALIGN=CENTER><img src="images/rwanda_broke_by_type.png" alt="drawing" width="375"/><img src="images/uganda_broke_by_type.png" alt="drawing" width="375"/>  </P>
+<P ALIGN=CENTER><img src="images/function_by_tech_rwanda.png" alt="drawing" width="375"/><img src="images/function_by_tech_uganda.png" alt="drawing" width="375"/>  </P>
 </div>
 
 There's notable variation by type, but less so in India. The technologies with the highest rate of being broken fall into the "other" category, which are a number of different technologies, each occuring less than 150 times in the dataset. There is enough variation among the 7 main technology types to suggest it could be a useful predictor.
