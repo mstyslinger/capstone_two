@@ -158,15 +158,14 @@ False negative| True positive<br />
 
 
 ## Logistic Regression:
-Some lead up...
+<div>
+<P ALIGN=CENTER><img src="images/logistic_regression.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
-<P ALIGN=CENTER><img src="images/log_result.jpg" alt="drawing" width="600"/></div>
-
-Some interpretations...
+# Study ongoing...
 
 ## **Some reflection:**
 * Recommend revising the survey after thorough consultation with stakeholders of the dataset to better identify expectations from the analysis.
 * Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking
 * Run the models on country disaggregated datasets
 
-# Study ongoing...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp # Study ongoing...
