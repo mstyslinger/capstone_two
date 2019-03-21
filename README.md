@@ -172,7 +172,7 @@ False negative| True positive<br />
 
 ## Logistic Regression:
 <div>
-<P ALIGN=CENTER><img src="images/logistic_regression2.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
+<P ALIGN=CENTER><img src="images/logistic_regression3.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 <br />
 
 ### Study ongoing...
