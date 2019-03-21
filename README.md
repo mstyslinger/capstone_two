@@ -45,10 +45,10 @@ There's notable variation by type at the country level, but less so in India. Th
 
 ### Age since original construction plotted against whether the water point is broken or functioning
 <div>
-<P ALIGN=CENTER><img src="images/broke_age.png" alt="drawing" width="425"/> </P>
+<P ALIGN=CENTER><img src="images/dist_by_age.png" alt="drawing" width="425"/> </P>
 </div>
 
-Original construction does not seem to have obvious influence on whether or not the water point is functioning or not
+The older water points in the dataset are functioning, and broken water points are by and large newer - the opposite of what would be expected.
 
 ### Correlation heatmap - categorical features (country and technology type) dummied:
 <div>
