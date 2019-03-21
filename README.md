@@ -52,7 +52,7 @@ The older water points in the dataset are functioning, and broken water points a
 
 ### Correlation heatmap - categorical features (country and technology type) dummied:
 <div>
-<P ALIGN=CENTER><img src="images/heat4.png" alt="drawing" width="700"/> </P>
+<P ALIGN=CENTER><img src="images/cool_heatmap.png" alt="drawing" width="700"/> </P>
 </div>
 
 Some of the stronger correlations with whether or not the water point is functioning:
