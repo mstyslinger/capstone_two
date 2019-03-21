@@ -16,20 +16,20 @@ The water point census data was collected through mobile phone surveys by local 
 ## **Exploratory data analysis (EDA)**
 The CSV dataset has 10,034 rows and 52 columns. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not? – is imbalanced, and train-test splits were made with stratification to maintain the proportionality of the original datset. After data cleaning, the resulting dataframe has 10,031 rows and 16 columns. Dummy columns (one-hot) were then created for two categorical features, resulting in a dataframe with 24 columns for use in the analysis.
 <div>
-<P ALIGN=CENTER><img src="images/imbalance.png" alt="drawing" width="430"/>  <img src="images/broken_by_country.png" alt="drawing" width="380"/> </P>
+<P ALIGN=CENTER><img src="images/imbalance.png" alt="drawing" width="430"/>  <img src="images/broken_by_country.png" alt="drawing" width="400"/> </P>
 </div>
 
-When the data is broken out by country, it becomes evident that the distribution of broken water points varies significantly by country:
+**The target has imbalanced classes.** When the data is broken out by country, it becomes evident that the distribution of broken water points varies significantly between them:
 * India - About 2% of water points (129/5,991) broken
 * Malawi - About 9% of water points (153/1730) broken
 * Rwanda - About 12% of water points (91/743) broken
 * Uganda - About 31% of water points (489/1,567) broken
 
-This suggests that country could be a significant predictor of broken water points. India accounts for about 60% of the water points in the dataset, and it also has the lowest incidence of broken water points. Therefore, 'India' is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
+India accounts for about 60% of the water points in the dataset, and it also has the lowest incidence of broken water points. Therefore, 'India' is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
 
 ### Proportion of water points by type of technology - overall and by country
 <div>
-<P ALIGN=CENTER><img src="images/function_by_tech.png" alt="drawing" width="700"/>  </P>
+<P ALIGN=CENTER><img src="images/function_by_tech.png" alt="drawing" width="6500"/>  </P>
 </div>
 <div>
 The most common technology in the dataset is the "Phe 6 Handpump," and the technology is also more or less tied for having the lowest proportion of being broken. Therefore, it is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
