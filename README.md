@@ -71,7 +71,7 @@ Plot and interpretation...
 MVP: Identify coefficients using logistic regression and feature importances using random forests. Tune to optimal hyperparameters. Make a recommendation based on the insights and suggestions for future work.
 
 ### Train, test, and holdout datasets:
-A holdout dataset (for final model testing) was split off from the full, cleaned dummied dataframe with 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set (80-20 split).
+A holdout dataset (for final model testing) was split off from the full (stratified), cleaned dummied dataframe with 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set (80-20 split). The training and test sets were used to fit and score the models, applying K-fold validation with stratification to deal with imbalanced classes.
 
 ### Random Forest Classifier:
 <div>
@@ -104,34 +104,55 @@ False negative| True positive<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.91<br />
 --------------|---------------<br />
 
-**Precicion is TOO GOOD and the confusion matrix is TOO CONSISTENT**
+**Precision is TOO GOOD and the confusion matrix is TOO CONSISTENT.**
 
-The feature that was identified as accounting for more than 40% of variance in the data (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed.
+One feature (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed, and two additional methods were used to deal with imbalanced classes: **class_weight='balanced'** and **SMOTE**
+
+**With class_weight='balanced':**
+* Precision with 1000 estimators: 0.954
+* Precision with 100 estimators: 0.954
+* Precision with 50 estimators: 0.954
+* Precision with 25 estimators: 0.954
+* Precision with 10 estimators: 0.956
+* Precision with 2 estimators: 0.96
+
+**Confusion matrix for model with n_estimators=10, 25, 50, 100, 1000:**<br />
+True negative | False positive<br />
+--------------|---------------<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.04<br />
+--------------|---------------<br />
+False negative| True positive<br />
+--------------|---------------<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.88<br />
+--------------|---------------<br />
+
+**With SMOTE:**
+* Precision with 1000 estimators: 0.578
+* Precision with 100 estimators: 0.578
+* Precision with 50 estimators: 0.579
+* Precision with 25 estimators: 0.578
+* Precision with 10 estimators: 0.58
+* Precision with 2 estimators: 0.583
+
+**Confusion matrix for model with n_estimators=10, 25, 50, 100, 1000:**<br />
+True negative | False positive<br />
+--------------|---------------<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.02<br />
+--------------|---------------<br />
+False negative| True positive<br />
+--------------|---------------<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.48<br />
+--------------|---------------<br />
+
+
+
+
 
 **Revised feature importances:**
 <div>
 <P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="800"/></div>
-  
-**Confusion matrix for model with n_estimators=10 and 'overall_state_of_water-point' removed:**<br />
 
-**Revised precision score:**<br />
-* Recall with 100 estimators: 0.947<br />
-* Recall with 50 estimators: 0.947<br />
-* Recall with 25 estimators: 0.948<br />
-* Recall with 10 estimators: 0.953<br />
-* Recall with 5 estimators: 0.95<br />
-* Recall with 2 estimators: 0.96<br />
-* Recall with 1 estimator: 0.953<br />
 
-**Confusion matrix for revised model with n_estimators=10:**<br />
-True negative | False positive<br />
---------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br />
---------------|---------------<br />
-False negative| True positive<br />
---------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.89<br />
---------------|---------------<br />
 
 
 ## Logistic Regression:
