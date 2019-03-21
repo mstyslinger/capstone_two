@@ -49,7 +49,7 @@ There's notable variation by type at the country level, but less so in India. Th
 <P ALIGN=CENTER><img src="images/dist_by_age.png" alt="drawing" width="550"/> </P>
 </div>
 
-The older water points in the dataset are functioning, and broken water points are by and large newer - the opposite of what would be expected.
+The oldest water points in the dataset are functioning, and broken water points are by and large newer - the opposite of what would be expected. There is a high proportion of functioning water points that are newer.
 
 ### Correlation heatmap - categorical features (country and technology type) dummied:
 <div>
