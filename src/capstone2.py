@@ -101,7 +101,7 @@ def split(dataframe, categoricals, one_hot_features):
 
 
 def upsample(X, y):
-    sm = SMOTE(random_state=21, ratio=1.0)
+    sm = SMOTE(random_state=21, k_neighbors=3, ratio=1.0)
     X_smote, y_smote = sm.fit_sample(X, y)
     return X_smote, y_smote
 
