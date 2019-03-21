@@ -45,7 +45,7 @@ There's notable variation by type at the country level, but less so in India. Th
 
 ### Age since original construction plotted against whether the water point is broken or functioning
 <div>
-<P ALIGN=CENTER><img src="images/dist_by_age.png" alt="drawing" width="425"/> </P>
+<P ALIGN=CENTER><img src="images/dist_by_age.png" alt="drawing" width="550"/> </P>
 </div>
 
 The older water points in the dataset are functioning, and broken water points are by and large newer - the opposite of what would be expected.
