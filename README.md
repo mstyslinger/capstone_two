@@ -162,7 +162,7 @@ False negative| True positive<br />
 <P ALIGN=CENTER><img src="images/logistic_regression.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 <br />
 
-## Study ongoing...
+### Study ongoing...
 
 <br />
 <br />
@@ -173,4 +173,4 @@ False negative| True positive<br />
 * Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking
 * Run the models on country disaggregated datasets
 
-## Study ongoing...
+### Study ongoing...
