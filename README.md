@@ -16,7 +16,7 @@ The water point census data was collected through mobile phone surveys by local 
 ## **Exploratory data analysis (EDA)**
 The CSV dataset has 10,034 rows and 52 columns. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not? – is imbalanced, and train-test splits were made with stratification to maintain the proportionality of the original datset. After data cleaning, the resulting dataframe has 10,031 rows and 16 columns. Dummy columns (one-hot) were then created for two categorical features, resulting in a dataframe with 24 columns for use in the analysis.
 <div>
-<P ALIGN=CENTER><img src="images/imbalance.png" alt="drawing" width="430"/>  <img src="images/broken_by_country2.png" alt="drawing" width="380"/> </P>
+<P ALIGN=CENTER><img src="images/imbalance.png" alt="drawing" width="430"/>  <img src="images/broken_by_country.png" alt="drawing" width="380"/> </P>
 </div>
 
 When the data is broken out by country, it becomes evident that the distribution of broken water points varies significantly by country:
@@ -27,19 +27,20 @@ When the data is broken out by country, it becomes evident that the distribution
 
 This suggests that country could be a significant predictor of broken water points. India accounts for about 60% of the water points in the dataset, and it also has the lowest incidence of broken water points. Therefore, 'India' is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
 
-### Water points broken by type of technology (mean of values 1 or 0) - overall and by country
+### Proportion of water points by type of technology - overall and by country
 <div>
-<P ALIGN=CENTER><img src="images/function_by_tech.png" alt="drawing" width="530"/>  </P>
+<P ALIGN=CENTER><img src="images/function_by_tech.png" alt="drawing" width="700"/>  </P>
 </div>
 <div>
 The most common technology in the dataset is the "Phe 6 Handpump," and the technology is also more or less tied for having the lowest proportion of being broken. Therefore, it is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
+
 <P ALIGN=CENTER><img src="images/india_broke_by_type.png" alt="drawing" width="375"/><img src="images/function_by_tech_malawi.png" alt="drawing" width="375"/>  </P>
 </div>
 <div>
 <P ALIGN=CENTER><img src="images/function_by_tech_rwanda.png" alt="drawing" width="375"/><img src="images/function_by_tech_uganda.png" alt="drawing" width="375"/>  </P>
 </div>
 
-There's notable variation by type, but less so in India. The technologies with the highest rate of being broken fall into the "other" category, which are a number of different technologies, each occuring less than 150 times in the dataset. There is enough variation among the 7 main technology types to suggest it could be a useful predictor.
+There's notable variation by type at the country level, but less so in India. The technologies with the highest rate of being broken fall into the "other" category, which are a number of different technologies, each occuring less than 150 times in the dataset. There is enough variation among the 7 main technology types to suggest it could be a useful predictor.
 
 ### Age since original construction plotted against whether the water point is broken or functioning
 <div>
@@ -165,6 +166,6 @@ Some interpretations...
 ## **Some reflection:**
 * Recommend revising the survey after thorough consultation with stakeholders of the dataset to better identify expectations from the analysis.
 * Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking
-* More...
+* Run the models on country disaggregated datasets
 
 # Study ongoing...
