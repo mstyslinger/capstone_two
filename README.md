@@ -162,7 +162,9 @@ False negative| True positive<br />
 <P ALIGN=CENTER><img src="images/logistic_regression.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 <br />
 <br />
+
 # Study ongoing...
+
 <br />
 <br />
 <br />
