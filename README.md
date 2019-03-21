@@ -29,12 +29,12 @@ India accounts for about 60% of the water points in the dataset, and it also has
 
 ### Proportion of water points by type of technology - overall and by country
 <div>
-<P ALIGN=CENTER><img src="images/function_by_tech.png" alt="drawing" width="6500"/>  </P>
+<P ALIGN=CENTER><img src="images/function_by_tech.png" alt="drawing" width="650"/>  </P>
 </div>
 <div>
 The most common technology in the dataset is the "Phe 6 Handpump," and the technology is also more or less tied for having the lowest proportion of being broken. Therefore, it is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
 
-<P ALIGN=CENTER><img src="images/india_broke_by_type.png" alt="drawing" width="375"/><img src="images/function_by_tech_malawi.png" alt="drawing" width="375"/>  </P>
+<P ALIGN=CENTER><img src="images/function_by_tech_india.png" alt="drawing" width="375"/><img src="images/function_by_tech_malawi.png" alt="drawing" width="375"/>  </P>
 </div>
 <div>
 <P ALIGN=CENTER><img src="images/function_by_tech_rwanda.png" alt="drawing" width="375"/><img src="images/function_by_tech_uganda.png" alt="drawing" width="375"/>  </P>
