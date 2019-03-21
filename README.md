@@ -65,7 +65,7 @@ Some of the stronger correlations with whether or not the water point is functio
 
 ### Pair plot:
 <div>
-<P ALIGN=CENTER><img src="images/pop_pairplot.png" alt="drawing" width="350"/> </P>
+<P ALIGN=CENTER><img src="images/pop_pairplot.png" alt="drawing" width="350"/><img src="images/age_pairplot.png" alt="drawing" width="350"/> </P>
 </div>
 Plotting the target against the continuous variable "num_families_in_community," there seems to be a higher proportion of functioning water points in communities with higher populations, and a higher proportion of broken water points in lower population communities. This, perhaps, could be an issue of prirotiy and funding allocated for maintainance.
 
