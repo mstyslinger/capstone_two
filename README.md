@@ -55,13 +55,23 @@ The older water points in the dataset are functioning, and broken water points a
 <P ALIGN=CENTER><img src="images/ cool_heat_annotated.png" alt="drawing" width="800"/> </P>
 </div>
 
-Some of the stronger correlations with whether or not the water point is functioning:
+**Some of the stronger correlations with the target - whether or not the water point is functioning:**
 * Whether or not it's in India (positive) or in Uganda (negative)                           
 * If it is a handpump (positive)
 * If it is one of the less common technologies (negative)
 * Number of households in the community (positive)
 * If it is "improved" and the water source is protected (positive)
 * Deemed to have adequate water quality (positive)
+
+**Malawi, water quality, and Afridev Handpump:**
+* The model of pump only occurs in Malawi (accpet 1), and would only be relevant in a Malawi-specific analysis
+* 85% of all "adequate water quality" responses were in Malawi. 96% of all "adequate water quality" responses were for the Afridev Handpump. **Suspicious!** Potentially a result of dishonest reporting by a local partner associated with that technology.
+* **adequate_water_quality** and **water_point_type_Afridev Handpump** were removed from the dataset for analysis.
+
+**Other interesting correlations for further analysis - not related to predicting the target:**
+* Age of the water point (since original construction) and various components being past their factory prescribed lifespan. Is age a good predictor of whether a pump is functioning afterall?
+* Water type: "protected spring" and components being past their factory prescribed lifespan. Perhaps this water point type should be prioritized for updating.
+* The category of water point types "other" (those that only occur a few times in the dataset) have a strong negative correlated with functioning. Could be investigated whether those types should continue to be supported.
 
 ### Pair plot:
 <div>
