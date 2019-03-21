@@ -27,13 +27,14 @@ The CSV dataset has 10,034 rows and 52 columns. Two columns have significant mis
 
 India accounts for about 60% of the water points in the dataset, and it also has the lowest incidence of broken water points. Therefore, 'India' is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
 
-### Proportion of water points by type of technology - overall and by country
+### Proportion of water points by type of technology - overall and by country:
 <div>
 <P ALIGN=CENTER><img src="images/function_by_tech.png" alt="drawing" width="600"/>  </P>
 </div>
-<div>
+
 The most common technology in the dataset is the "Phe 6 Handpump," and the technology is also more or less tied for having the lowest proportion of being broken. Therefore, it is assigned as the baseline "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
 
+<div>
 <P ALIGN=CENTER><img src="images/function_by_tech_india.png" alt="drawing" width="375"/><img src="images/function_by_tech_malawi.png" alt="drawing" width="375"/>  </P>
 </div>
 <div>
