@@ -160,8 +160,12 @@ False negative| True positive<br />
 ## Logistic Regression:
 <div>
 <P ALIGN=CENTER><img src="images/logistic_regression.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
-
+<br />
+<br />
 # Study ongoing...
+<br />
+<br />
+<br />
 
 ## **Some reflection:**
 * Recommend revising the survey after thorough consultation with stakeholders of the dataset to better identify expectations from the analysis.
