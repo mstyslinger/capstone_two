@@ -163,7 +163,7 @@ False negative| True positive<br />
 <br />
 <br />
 
-# Study ongoing...
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</div> ## Study ongoing...
 
 <br />
 <br />
@@ -174,4 +174,4 @@ False negative| True positive<br />
 * Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking
 * Run the models on country disaggregated datasets
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp # Study ongoing...
+## Study ongoing...
