@@ -33,7 +33,8 @@ India accounts for about 60% of the water points in the dataset, and it also has
 </div>
 
 The most common technology in the dataset is the "Phe 6 Handpump," and the technology is also more or less tied for having the lowest proportion of being broken. Therefore, the **Phe 6 Handpump is assigned as the baseline** "dummy" variable in a one-hot encoded (for categorical features) dataframe to be fed into the models.
-<br />
+ <br />
+ <br />
 <div>
 <P ALIGN=CENTER><img src="images/function_by_tech_india.png" alt="drawing" width="375"/><img src="images/function_by_tech_malawi.png" alt="drawing" width="375"/>  </P>
 </div>
