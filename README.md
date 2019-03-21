@@ -56,12 +56,12 @@ The older water points in the dataset are functioning, and broken water points a
 </div>
 
 Some of the stronger correlations with whether or not the water point is functioning:
-* Whether or not it's in India                              
-* If it is a handpump                                       
-* Number of households in the community                      
-* If it is "improved" and the water source is protected
-* Deemed to have adequate water quality
-* Engineer has deemed it in "good overall health"
+* Whether or not it's in India (positive) or in Uganda (negative)                           
+* If it is a handpump (positive)
+* If it is one of the less common technologies (negative)
+* Number of households in the community (positive)
+* If it is "improved" and the water source is protected (positive)
+* Deemed to have adequate water quality (positive)
 
 ### Pair plots:
 Plots and interpretation...
