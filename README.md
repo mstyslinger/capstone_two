@@ -163,7 +163,7 @@ False negative| True positive<br />
 <br />
 <br />
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp ## Study ongoing...
+## Study ongoing...
 
 <br />
 <br />
