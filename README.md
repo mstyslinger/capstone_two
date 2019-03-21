@@ -63,11 +63,11 @@ Some of the stronger correlations with whether or not the water point is functio
 * If it is "improved" and the water source is protected (positive)
 * Deemed to have adequate water quality (positive)
 
-### Pair plots:
-Plots and interpretation...
-
-### t-SNE plot:
-Plot and interpretation...
+### Pair plot:
+<div>
+<P ALIGN=CENTER><img src="images/pop_pairplot.png" alt="drawing" width="600"/> </P>
+</div>
+Plotting the target against the continuous variable "num_families_in_community," there seems to be a higher proportion of functioning water points in communities with higher populations, and a higher proportion of broken water points in lower population communities. This, perhaps, could be an issue of prirotiy and funding allocated for maintainance.
 
 ## Model fitting:
 MVP: Identify coefficients using logistic regression and feature importances using random forests. Tune to optimal hyperparameters. Make a recommendation based on the insights and suggestions for future work.
