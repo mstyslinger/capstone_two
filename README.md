@@ -92,9 +92,9 @@ A holdout dataset (for final model testing) was split off from the full (stratif
 <div>
 <P ALIGN=CENTER><img src="images/random_forest2.png" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
-The random forest classifier is a supervised ensemble machine learning model...
+The random forest classifier is a supervised ensemble machine learning model that uses decision trees are trained on bootstrapped samples. Each decision tree is developed by breaking down the dataset into smaller and smaller subsets, splitting on the various features in the dataset. The features are chosen using information gain to choose which attribute to label each node with
 
-The training dataset was fit to a random forest model to determine the most important features for predicting the target: water points working or not. **The model was run with various n_estimators to identify the best precision score (tp / (tp + fp))** - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked). Set the hyperparameter **class_weight='balanced'** to help deal with the imbalanced class:
+The training dataset was fit to a random forest model to determine the most important features for predicting the target: water points working or not. **The model was run with various numbers of decision trees (n_estimators) to identify the best precision score (tp / (tp + fp))** - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked). Set the hyperparameter **class_weight='balanced'** to help deal with the imbalanced class:
 * Precision with 1000 estimators: 0.981
 * Precision with 100 estimators: 0.981
 * Precision with 50 estimators: 0.981
@@ -157,6 +157,10 @@ False negative| True positive<br />
  <br />
  <br />
 
+**Partial dependency plots to understand the direction of influence for most important features:**<br />
+¯\_(ツ)_/¯
+
+
 ## Logistic Regression:
 <div>
 <P ALIGN=CENTER><img src="images/logistic_regression3.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
@@ -169,7 +173,8 @@ False negative| True positive<br />
 
 ## **Some reflection:**
 * Recommend revising the survey after thorough consultation with stakeholders of the dataset to better identify expectations from the analysis.
-* Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking
-* Run the models on country disaggregated datasets
+* Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking. This would likely clarify why households using water points influences its lieklihood to break.
+* Run the models on country disaggregated datasets for insights that did not emerge in the entire dataset. Country-level insights and recommendations are likely far more actionable for the client.
+* 
 
 ### Study ongoing...
