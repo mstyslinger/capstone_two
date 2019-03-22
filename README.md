@@ -103,7 +103,7 @@ The random forest classifier is a supervised ensemble machine learning model tha
 
 **Precision is TOO GOOD and very consistent!**
 
-One feature (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed, with the following results:
+**One feature (overall_state_of_water-point) was causing data leakage**. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed, with the following results:
 * Precision with 1000 estimators: 0.95
 * Precision with 100 estimators: 0.949
 * Precision with 50 estimators: 0.949
