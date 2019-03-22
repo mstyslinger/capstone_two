@@ -160,8 +160,9 @@ False negative| True positive<br />
 **Partial dependency plots to understand the direction of influence for most important features:**<br />
  <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¯\_(ツ)_/¯
-
-
+ <br />
+ <br />
+ 
 ## Logistic Regression:
 <div>
 <P ALIGN=CENTER><img src="images/logistic_regression3.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
