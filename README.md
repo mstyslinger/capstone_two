@@ -110,7 +110,7 @@ One feature (overall_state_of_water-point) was causing data leakage. The feature
 * Precision with 25 estimators: 0.949
 * Precision with 10 estimators: 0.95
 
-**Still TOO GOOD!**
+**Still TOO GOOD!** The model is guessing 1 (water point functioning) nearly always.
 
 To further address the imbalanced classes, the **S**ynthetic **M**inority **O**versampling **TE**chnique **(SMOTE)** method was applied **(k_neighbors=4)** to create new instances of the minority class (in this case 0 for broken) between actual instances, evening out the distirubtion of 1s and 0s in the target data. An example (credit: http://rikunert.com) with a continuous y feature:
 <P ALIGN=CENTER><img src="images/smote.png" alt="drawing" width="600"/></P>
