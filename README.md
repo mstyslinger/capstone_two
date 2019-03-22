@@ -101,7 +101,7 @@ The training dataset was fit to a random forest model to determine the most impo
 * Precision with 25 estimators: 0.981
 * Precision with 10 estimators: 0.981
 
-**Precision is TOO GOOD and very consistent.**
+**Precision is TOO GOOD and very consistent!**
 
 One feature (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed, with the following results:
 * Precision with 1000 estimators: 0.95
@@ -110,32 +110,23 @@ One feature (overall_state_of_water-point) was causing data leakage. The feature
 * Precision with 25 estimators: 0.949
 * Precision with 10 estimators: 0.95
 
-**Still TOO GOOD.**
+**Still TOO GOOD!**
 
-To further address the imbalanced classes, the **S**ynthetic **M**inority **O**versampling **TE**chnique **(SMOTE)** method was applied to create new instances of the minority class (in this case 0 for broken) between actual instances, evening out the distirubtion of 1s and 0s in the target data. Example (credit: http://rikunert.com)
+To further address the imbalanced classes, the **S**ynthetic **M**inority **O**versampling **TE**chnique **(SMOTE)** method was applied **(k_neighbors=4)** to create new instances of the minority class (in this case 0 for broken) between actual instances, evening out the distirubtion of 1s and 0s in the target data. An example (credit: http://rikunert.com) with a continuous y feature:
 <P ALIGN=CENTER><img src="images/smote.png" alt="drawing" width="600"/></P>
 
+**Results with SMOTE:**
+* Precision with 1000 estimators: 0.71
+* Precision with 100 estimators: 0.71
+* Precision with 50 estimators: 0.711
+* Precision with 25 estimators: 0.709
+* Precision with 10 estimators: 0.709
+
+**More reasonable results, with some variation.** The best precision score was 0.711, and the model is therefore set to 50 estimators. The feature importances were then calculated using this model.
 
 
-**With class_weight='balanced':**
-* Precision with 1000 estimators: 0.954
-* Precision with 100 estimators: 0.954
-* Precision with 50 estimators: 0.954
-* Precision with 25 estimators: 0.954
-* Precision with 10 estimators: 0.956
-* Precision with 2 estimators: 0.96
-
-**With SMOTE:**
-* Precision with 1000 estimators: 0.578
-* Precision with 100 estimators: 0.578
-* Precision with 50 estimators: 0.579
-* Precision with 25 estimators: 0.578
-* Precision with 10 estimators: 0.58
-* Precision with 2 estimators: 0.583
-
-**Revised feature importances:**
 <div>
-<P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="800"/></div>
+<P ALIGN=CENTER><img src="images/first_feat_importances.png" alt="drawing" width="800"/></div>
 
 
 
@@ -150,6 +141,8 @@ False negative| True positive<br />
 --------------|---------------<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.48<br />
 --------------|---------------<br />
+ <br />
+ <br />
 
 ## Logistic Regression:
 <div>
