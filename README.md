@@ -129,7 +129,22 @@ To further address the imbalanced classes, the **S**ynthetic **M**inority **O**v
 <div>
 <P ALIGN=CENTER><img src="images/first_feat_importances.png" alt="drawing" width="800"/></div>
 
-**X features account for more than 5% of the variance in the data:**
+**5 features account for more than 5% of the variance in the data:**
+* Household population in cthe community
+* Age of the water point (since original consturction)
+* Being in Uganda
+* Being an "other" water point type
+* Being an "improved" water point type
+
+**7 features account for less than 1% of the variance**, and the tuned model and was run again with those features removed, and the feature importances were recalculated:
+* **Precision: 0.708** 
+
+<div>
+<P ALIGN=CENTER><img src="images/first_feat_importances.png" alt="drawing" width="800"/></div>
+ 
+Neither the precision score or feature importances showed significant change with the low importance features taken out, so the model was run with the holdout set:
+**Precision with holdout set: **
+
 
 **Precision score and confusion matrix for final model with n_estimators=10:**<br />
 * Precision with 10 estimators: 0.58<br />
