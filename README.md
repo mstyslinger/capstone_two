@@ -182,7 +182,7 @@ False negative| True positive<br />
 ## **Future work:**
 * Fit a logisitc regression model to triangulate and get a clearer picture of how the target is influenced by the various features in the dataset.
 * Recommend to the clinet to revise the survey after thorough consultation with stakeholders of the dataset to better identify expectations from the analysis.
-* Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking. This would likely clarify why households using water points influences its lieklihood to break.
+* Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking. This would likely clarify why households using water points influences its likelihood to break.
 * Run the models on country disaggregated datasets for insights that did not emerge in the entire dataset. Country-level insights and recommendations are likely far more actionable for the client.
 
 
