@@ -132,7 +132,7 @@ To further address the imbalanced classes, the **S**ynthetic **M**inority **O**v
 
 **4 features account for more than 5% of the variance in the data each:**
 * Being in Uganda
-* Household population in cthe community
+* Household population in the community
 * Age of the water point (since original consturction)
 * Being an "other" water point type
 
