@@ -113,7 +113,7 @@ One feature (overall_state_of_water-point) was causing data leakage. The feature
 **Still TOO GOOD.**
 
 To further address the imbalanced classes, the **S**ynthetic **M**inority **O**versampling **TE**chnique **(SMOTE)** method was applied to create new instances of the minority class (in this case 0 for broken) between actual instances, evening out the distirubtion of 1s and 0s in the target data. Example (credit: http://rikunert.com)
-<P ALIGN=CENTER><img src="images/smote.png" alt="drawing" width="350"/></P>
+<P ALIGN=CENTER><img src="images/smote.png" alt="drawing" width="600"/></P>
 
 
 
