@@ -140,7 +140,7 @@ To further address the imbalanced classes, the **S**ynthetic **M**inority **O**v
 * **Precision: 0.708** 
 
 <div>
-<P ALIGN=CENTER><img src="images/first_feat_importances.png" alt="drawing" width="800"/></div>
+<P ALIGN=CENTER><img src="images/second_feature_importances.png" alt="drawing" width="800"/></div>
  
 Neither the precision score or feature importances showed significant change with the low importance features taken out, so the model was run with the holdout set:
 **Precision with holdout set: **
