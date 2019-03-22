@@ -83,45 +83,39 @@ Plotting the target against the continuous variable "num_families_in_community,"
 On the other hand, this distribution **could just be an effect of the imbalanced class** - "functioning" occurs far more often.
 
 ## Model fitting:
-MVP: Identify coefficients using logistic regression and feature importances using random forests. Tune to optimal hyperparameters. Make a recommendation based on the insights and suggestions for future work.
+Identify feature importances using and (partial dependence of most important features) using random forests and coefficients using logistic regression. Tune to optimal models. Make recommendations based on the insights and suggestions for future work.
 
 ### Train, test, and holdout datasets:
-A holdout dataset (for final model testing) was split off from the full (stratified), cleaned dummied dataframe with 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set (80-20 split). The training and test sets were used to fit and score the models, applying K-fold validation with stratification to deal with imbalanced classes.
+A holdout dataset (for final model testing) was split off from the full (stratified), cleaned dummied dataframe with 2,007 rows. After the holdout set was removed, a dataset with 6,419 rows was split off for training the models, and the remaining rows were split into a test set (80-20 split). The training and test sets were used to fit and score the models, applying K-fold crossvalidation (n_splits=4).
 
 ### Random Forest Classifier:
 <div>
 <P ALIGN=CENTER><img src="images/random_forest2.png" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
-The training dataset was fit to a random forest classifier model - a supervised ensemble machine learning method - to determine the most important features for predicting the target: water points working or not. The model was run with various n_estimators to identify the best precision score - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked):
-* Precision with 1000 estimators: 0.982
-* Precision with 100 estimators: 0.982
-* Precision with 50 estimators: 0.982
-* Precision with 25 estimators: 0.982
-* Precision with 10 estimators: 0.983
+The random forest classifier is a supervised ensemble machine learning model...
 
-**Confusion matrix for model with n_estimators=10:**<br />
-True negative | False positive<br />
---------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.02<br />
---------------|---------------<br />
-False negative| True positive<br />
---------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.91<br />
---------------|---------------<br />
+The training dataset was fit to a random forest model to determine the most important features for predicting the target: water points working or not. **The model was run with various n_estimators to identify the best precision score (tp / (tp + fp))** - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked). Set the hyperparameter **class_weight='balanced'** to help deal with the imbalanced class:
+* Precision with 1000 estimators: 0.981
+* Precision with 100 estimators: 0.981
+* Precision with 50 estimators: 0.981
+* Precision with 25 estimators: 0.981
+* Precision with 10 estimators: 0.981
 
-**Confusion matrix for model with n_estimators=100:**<br />
-True negative | False positive<br />
---------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.02<br />
---------------|---------------<br />
-False negative| True positive<br />
---------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.91<br />
---------------|---------------<br />
+**Precision is TOO GOOD and very consistent.**
 
-**Precision is TOO GOOD and the confusion matrix is TOO CONSISTENT.**
+One feature (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed, with the following results:
+* Precision with 1000 estimators: 0.95
+* Precision with 100 estimators: 0.949
+* Precision with 50 estimators: 0.949
+* Precision with 25 estimators: 0.949
+* Precision with 10 estimators: 0.95
 
-One feature (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed, and two additional methods were used to deal with imbalanced classes: **class_weight='balanced'** and **SMOTE**
+**Still TOO GOOD.**
+
+To further address the imbalanced classes, the **S**ynthetic **M**inority **O**versampling **TE**chnique **(SMOTE)** method was applied to create new instances of the minority class (in this case 0 for broken) between actual instances, evening out the distirubtion of 1s and 0s in the target data. Example (credit: http://rikunert.com)
+<P ALIGN=CENTER><img src="images/smote.png" alt="drawing" width="350"/></P>
+
+
 
 **With class_weight='balanced':**
 * Precision with 1000 estimators: 0.954
@@ -131,16 +125,6 @@ One feature (overall_state_of_water-point) was causing data leakage. The feature
 * Precision with 10 estimators: 0.956
 * Precision with 2 estimators: 0.96
 
-**Confusion matrix for model with n_estimators=10, 25, 50, 100, 1000:**<br />
-True negative | False positive<br />
---------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.04<br />
---------------|---------------<br />
-False negative| True positive<br />
---------------|---------------<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.88<br />
---------------|---------------<br />
-
 **With SMOTE:**
 * Precision with 1000 estimators: 0.578
 * Precision with 100 estimators: 0.578
@@ -149,7 +133,15 @@ False negative| True positive<br />
 * Precision with 10 estimators: 0.58
 * Precision with 2 estimators: 0.583
 
-**Confusion matrix for model with n_estimators=10, 25, 50, 100, 1000:**<br />
+**Revised feature importances:**
+<div>
+<P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="800"/></div>
+
+
+
+**Precision score and confusion matrix for final model with n_estimators=10:**<br />
+* Precision with 10 estimators: 0.58<br />
+ <br />
 True negative | False positive<br />
 --------------|---------------<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.02<br />
@@ -159,17 +151,6 @@ False negative| True positive<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.48<br />
 --------------|---------------<br />
 
-
-
-
-
-**Revised feature importances:**
-<div>
-<P ALIGN=CENTER><img src="images/feat_importances_2.png" alt="drawing" width="800"/></div>
-
-
-
-
 ## Logistic Regression:
 <div>
 <P ALIGN=CENTER><img src="images/logistic_regression3.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
@@ -177,9 +158,8 @@ False negative| True positive<br />
 
 ### Study ongoing...
 
-<br />
-<br />
-<br />
+ <br />
+ <br />
 
 ## **Some reflection:**
 * Recommend revising the survey after thorough consultation with stakeholders of the dataset to better identify expectations from the analysis.
