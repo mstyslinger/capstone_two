@@ -129,7 +129,7 @@ To further address the imbalanced classes, the **S**ynthetic **M**inority **O**v
 <div>
 <P ALIGN=CENTER><img src="images/feat_importances_first.png" alt="drawing" width="800"/></div>
 
-**4 features account for 10%-20% of the variance in the data each:**
+**4 features account for more than 5% of the variance in the data each:**
 * Being in Uganda
 * Household population in cthe community
 * Age of the water point (since original consturction)
