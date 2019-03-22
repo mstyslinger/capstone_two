@@ -122,13 +122,14 @@ To further address the imbalanced classes, the **S**ynthetic **M**inority **O**v
 * Precision with 25 estimators: 0.709
 * Precision with 10 estimators: 0.709
 
-**More reasonable results, with some variation.** The best precision score was 0.711, and the model is therefore set to 50 estimators. The feature importances were then calculated using this model.
-
+**More reasonable results, with some variation.** The best precision score was 0.711, and the model is therefore set to **50 estimators**. The next step is to calculate the most important features for predicting the target. The feature importances are measured using the total information gain increases from splits on each given feature in the "forest." Steps:
+* For each feature, the decrease in impurity criterion (**criterion='gini'**) is calculated for nodes that split on it, weighted by how many data points pass through those nodes.
+* Average that calculation for each node across the "forest."
 
 <div>
 <P ALIGN=CENTER><img src="images/first_feat_importances.png" alt="drawing" width="800"/></div>
 
-
+**X features account for more than 5% of the variance in the data:**
 
 **Precision score and confusion matrix for final model with n_estimators=10:**<br />
 * Precision with 10 estimators: 0.58<br />
