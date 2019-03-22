@@ -78,7 +78,7 @@ The oldest water points in the dataset are functioning, and broken water points 
 <div>
 <P ALIGN=CENTER><img src="images/pop_pairplot.png" alt="drawing" width="350"/><img src="images/age_pairplot.png" alt="drawing" width="350"/> </P>
 </div>
-Plotting the target against the continuous variable "num_families_in_community," there seems to be a higher proportion of functioning water points in communities with higher populations, and a higher proportion of broken water points in lower population communities. This, perhaps, could be an issue of prirotiy and funding allocated for maintainance. Similarly, older water points have a higher proportion of functioning water points, which again could point to those water points being more consistently managed.<br />
+Plotting the target against the continuous variable "num_families_in_community," there seems to be a higher proportion of functioning water points in communities with higher populations, and a higher proportion of broken water points in lower population communities. This, perhaps, **could be an issue of prirotiy and funding allocated for maintainance.** Similarly, older water points have a higher proportion of functioning water points, which again could point to those water points being more consistently managed.<br />
  <br />
 On the other hand, this distribution **could just be an effect of the imbalanced class** - "functioning" occurs far more often.
 
