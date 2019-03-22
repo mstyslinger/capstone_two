@@ -6,7 +6,7 @@ A Denver non-profit works with district-level governments around the world to as
 
 The organization hopes to use the water point census dataset to better understand the factors that contribute to the likelihood of a waterpoint breaking. In their annual planning, they want to be able to guide local partners on which water points to inspect and earmark funds to support maintenance. This could greatly improve maintenance response times and, ideally, help local governments in their planning to ensure total coverage of clean water access for their constituents.
 
-### The analytics questions:
+### The analysis questions:
 * What are the key predictors of whether or not a water point is functioning on any given day?
 * Is the organization able to identify with reasonable certainty which water points are likely to need maintenance or replacement?
 
