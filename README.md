@@ -74,7 +74,7 @@ The oldest water points in the dataset are functioning, and broken water points 
 * Water type: "protected spring" and components being past their factory prescribed lifespan. Perhaps this water point type should be prioritized for updating.
 * The category of water point types "other" (those that only occur a few times in the dataset) have a strong negative correlated with functioning. Could be investigated whether those types should continue to be supported.
 
-### Pair plots with continuous features and the target:
+### Pair plots with the target plotted against continuous features:
 <div>
 <P ALIGN=CENTER><img src="images/pop_pairplot.png" alt="drawing" width="350"/><img src="images/age_pairplot.png" alt="drawing" width="350"/> </P>
 </div>
