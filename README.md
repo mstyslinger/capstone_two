@@ -65,7 +65,7 @@ The oldest water points in the dataset are functioning, and broken water points 
 * Deemed to have adequate water quality (positive)
 
 **Malawi, water quality, and Afridev Handpump:**
-* The model of pump only occurs in Malawi (accpet 1), and would only be relevant in a Malawi-specific analysis
+* The Afridev model of handpump only occurs in Malawi (accpet 1), and would only be relevant in a Malawi-specific analysis
 * 85% of all "adequate water quality" responses were in Malawi. 96% of all "adequate water quality" responses were for the Afridev Handpump. **Suspicious!** Potentially a result of dishonest reporting by a local partner associated with that technology.
 * **adequate_water_quality** and **water_point_type_Afridev Handpump** were removed from the dataset for analysis.
 
