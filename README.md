@@ -136,7 +136,7 @@ To further address the imbalanced classes, the **S**ynthetic **M**inority **O**v
 * Being an "other" water point type
 
 **5 features account for less than 1% of the variance**, and the tuned model and was run again with those features removed, and the feature importances were recalculated:
-* **Precision: 0.708** 
+* Precision: **0.708** 
 
 <div>
 <P ALIGN=CENTER><img src="images/feat_importances_second.png" alt="drawing" width="800"/></div>
@@ -146,11 +146,11 @@ Neither the precision score or feature importances showed significant change wit
 **Precision score and confusion matrix with holdout data:**<br />
 * Precision: **0.94**<br />
  <br />
-True negative | False positive<br />
+**True negative** | **False positive**<br />
 --------------|---------------<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;68&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;104<br />
 --------------|---------------<br />
-False negative| True positive<br />
+**False negative**| **True positive**<br />
 --------------|---------------<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;66&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1769<br />
 --------------|---------------<br />
