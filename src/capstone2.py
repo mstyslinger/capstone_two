@@ -20,7 +20,7 @@ from sklearn.model_selection import KFold
 from imblearn import under_sampling, over_sampling
 from imblearn.over_sampling import SMOTE
 from collections import Counter
-from clean import clean
+import cleaning as cln
 
 def country_disaggregate(df):
     india_mask = df['geo_level_1'] == "India"
@@ -63,7 +63,7 @@ def split(dataframe, categoricals, one_hot_features):
 
 
 def upsample(X, y):
-    sm = SMOTE(random_state=21, k_neighbors=4, ratio=1.0)
+    sm = SMOTE(random_state=32, k_neighbors=4, ratio=1.0)
     X_smote, y_smote = sm.fit_sample(X, y)
     return X_smote, y_smote
 
@@ -114,7 +114,7 @@ def feat_imps(model, X_train, y_train):
 
 if __name__ == "__main__":
     data = pd.read_csv('wfp_pumps.csv')
-    df = clean(data)
+    df = cln.clean(data)
     df_india, df_malawi, df_rwanda, df_uganda = country_disaggregate(df)
     categoricals = ['geo_level_1', 'water_point_type']
     one_hot_features = ['geo_level_1_India', 'water_point_type_Phe 6 Handpump']
