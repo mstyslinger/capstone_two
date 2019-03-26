@@ -161,9 +161,9 @@ False negative| True positive<br />
 **Partial dependency plots to understand the direction of influence for most important features:**<br />
  <br />
  <div>
-<P ALIGN=CENTER><img src="images/part_dep.png" alt="drawing" width="600"/></div><br />
+<P ALIGN=CENTER><img src=".png" alt="drawing" width="600"/></div><br />
  <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¯\_(ツ)_/¯
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <br />
  <br />
  
