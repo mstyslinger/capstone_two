@@ -19,7 +19,10 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import KFold
 from imblearn import under_sampling, over_sampling
 from imblearn.over_sampling import SMOTE
+from imblearn.over_sampling import RandomOverSampler
 from collections import Counter
+from skater.model import InMemoryModel
+from skater.core.explanations import Interpretation
 import cleaning as cln
 
 def country_disaggregate(df):
@@ -115,6 +118,7 @@ def feat_imps(model, X_train, y_train):
 if __name__ == "__main__":
     data = pd.read_csv('wfp_pumps.csv')
     df = cln.clean(data)
+    interpreter = Interpretation()
     df_india, df_malawi, df_rwanda, df_uganda = country_disaggregate(df)
     categoricals = ['geo_level_1', 'water_point_type']
     one_hot_features = ['geo_level_1_India', 'water_point_type_Phe 6 Handpump']

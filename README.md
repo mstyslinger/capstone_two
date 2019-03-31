@@ -2,19 +2,19 @@
 <div>
 <P ALIGN=CENTER><img src="images/water.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
-A Denver non-profit works with district-level governments around the world to assess communities without adequate access to clean water, identify appropriate technologies, and design and construct water points for underserved populations. In 2017, the organization conducted a full census of water points in supported districts of four countries. The census survey included information on location of each water point, the size of the population it serves, physical condition of the hardware, and whether or not the water point was functioning – among other information. The resulting dataset is intended as a tool for local governments in their planning and budgeting for clean water coverage within their jurisdictions.
+A non-profit works with district-level governments around the world to assess communities without adequate access to clean water, identify appropriate technologies, and design and construct water points for underserved populations. **In 2017, the organization conducted a full census of water points in supported districts of four countries.** The census survey included **information on location of each water point, the size of the population it serves, physical condition of the hardware, and whether or not the water point was functioning** – among other information. The resulting dataset is intended as a tool for local governments in their planning and budgeting for clean water coverage within their jurisdictions.
 
 The organization hopes to use the water point census dataset to better understand the factors that contribute to the likelihood of a waterpoint breaking. In their annual planning, they want to be able to guide local partners on which water points to inspect and earmark funds to support maintenance. This could greatly improve maintenance response times and, ideally, help local governments in their planning to ensure total coverage of clean water access for their constituents.
 
-### The analytics questions:
+### The analysis questions:
 * What are the key predictors of whether or not a water point is functioning on any given day?
 * Is the organization able to identify with reasonable certainty which water points are likely to need maintenance or replacement?
 
 ### The dataset:
-The water point census data was collected through mobile phone surveys by local engineers who are trained to assess the components of the water point technologies. There is one survey for handpumps and spring-fed taps and another for piped water systems, and the completed surveys are submitted to a cloud aggregator that then exports a CSV file. This analysis will focus on data from handpumps and spring-fed taps. Piped water systems are heavily monitored and managed, and when one is broken it does not go unnoticed. Handpumps, in contrast, in very remote areas can become defunct without governments taking much notice.
+The water point census data was collected through mobile phone surveys by local engineers who are trained to assess the components of the water point technologies. There is one survey for handpumps and spring-fed taps and another for piped water systems, and the completed surveys are submitted to a cloud aggregator that then exports a CSV file. **This analysis will focus on data from handpumps and spring-fed taps.** Piped water systems are heavily monitored and managed, and when one is broken it does not go unnoticed. Handpumps, in contrast, in very remote areas can become defunct without governments taking much notice.
 
 ## **Exploratory data analysis (EDA)**
-The CSV dataset has 10,034 rows and 52 columns. Two columns have significant missing values and will be removed from the analysis. The feature to be predicted – is the water point functioning or not? – is imbalanced, and train-test splits were made with stratification to maintain the proportionality of the original datset. After data cleaning, the resulting dataframe has 10,031 rows and 16 columns. Dummy columns (one-hot) were then created for two categorical features, resulting in a dataframe with 24 columns for use in the analysis.
+The CSV dataset has 10,034 rows and 52 columns. Two columns have significant missing values and will be removed from the analysis. **The feature to be predicted – is the water point functioning or not? – is imbalanced, and train-test splits were made with stratification to maintain the proportionality of the original datset.** After data cleaning, the resulting dataframe has 10,031 rows and 16 columns. Dummy columns (one-hot) were then created for two categorical features, resulting in a dataframe with 24 columns for use in the analysis.
 <div>
 <P ALIGN=CENTER><img src="images/imbalance.png" alt="drawing" width="430"/>  <img src="images/broken_by_country.png" alt="drawing" width="400"/> </P>
 </div>
@@ -65,7 +65,7 @@ The oldest water points in the dataset are functioning, and broken water points 
 * Deemed to have adequate water quality (positive)
 
 **Malawi, water quality, and Afridev Handpump:**
-* The model of pump only occurs in Malawi (accpet 1), and would only be relevant in a Malawi-specific analysis
+* The Afridev model of handpump only occurs in Malawi (accept 1), and would only be relevant in a Malawi-specific analysis
 * 85% of all "adequate water quality" responses were in Malawi. 96% of all "adequate water quality" responses were for the Afridev Handpump. **Suspicious!** Potentially a result of dishonest reporting by a local partner associated with that technology.
 * **adequate_water_quality** and **water_point_type_Afridev Handpump** were removed from the dataset for analysis.
 
@@ -74,12 +74,13 @@ The oldest water points in the dataset are functioning, and broken water points 
 * Water type: "protected spring" and components being past their factory prescribed lifespan. Perhaps this water point type should be prioritized for updating.
 * The category of water point types "other" (those that only occur a few times in the dataset) have a strong negative correlated with functioning. Could be investigated whether those types should continue to be supported.
 
-### Pair plots with continuous features and the target:
+### Pair plots with the target plotted against continuous features:
 <div>
 <P ALIGN=CENTER><img src="images/pop_pairplot.png" alt="drawing" width="350"/><img src="images/age_pairplot.png" alt="drawing" width="350"/> </P>
 </div>
-Plotting the target against the continuous variable "num_families_in_community," there seems to be a higher proportion of functioning water points in communities with higher populations, and a higher proportion of broken water points in lower population communities. This, perhaps, could be an issue of prirotiy and funding allocated for maintainance. Similarly, older water points have a higher proportion of functioning water points, which again could point to those water points being more consistently managed.
 
+Plotting the target against the continuous variable "num_families_in_community," there seems to be a higher proportion of functioning water points in communities with higher populations, and a higher proportion of broken water points in lower population communities. This, perhaps, **could be an issue of prirotiy and funding allocated for maintainance.** Similarly, older water points have a higher proportion of functioning water points, which again could point to those water points being more consistently managed.<br />
+ <br />
 On the other hand, this distribution **could just be an effect of the imbalanced class** - "functioning" occurs far more often.
 
 ## Model fitting:
@@ -94,7 +95,7 @@ A holdout dataset (for final model testing) was split off from the full (stratif
 
 The random forest classifier is a supervised ensemble machine learning model that uses decision trees that are trained on bootstrapped samples. Each decision tree is developed by breaking down the dataset into smaller and smaller subsets, splitting on features in the dataset where the most information can be gained. The model then classifies the data into one of the two splits. The model utlimately produces predicted values for the target. The random forest classifer combines the results of many decision trees to get a more prediction.
 
-The training dataset was fit to a random forest model to determine the most important features for predicting the target: water points working or not. **The model was run with various numbers of decision trees (n_estimators) to identify the best precision score (tp / (tp + fp))** - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked). Set the hyperparameter **class_weight='balanced'** to help deal with the imbalanced class:
+**The training dataset was fit to a random forest classifier model** to determine the most important features for predicting the target: water points working or not. **The model was run with various numbers of decision trees (n_estimators) to identify the best precision score (tp / (tp + fp))** - false negative (the model predicts a water point isn't working when it actually is) is preferred to false positive (a broken water point could then get overlooked). Set the hyperparameter **class_weight='balanced'** to help deal with the imbalanced class:
 * Precision with 1000 estimators: 0.981
 * Precision with 100 estimators: 0.981
 * Precision with 50 estimators: 0.981
@@ -103,7 +104,7 @@ The training dataset was fit to a random forest model to determine the most impo
 
 **Precision is TOO GOOD and very consistent!**
 
-One feature (overall_state_of_water-point) was causing data leakage. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed, with the following results:
+**One feature (overall_state_of_water-point) was causing data leakage**. The feature labels are scores from 1-3, with the worst score (1) equating to "does not function" - essentially the same as the target feature. The model was run again with that feature removed, with the following results:
 * Precision with 1000 estimators: 0.95
 * Precision with 100 estimators: 0.949
 * Precision with 50 estimators: 0.949
@@ -129,9 +130,9 @@ To further address the imbalanced classes, the **S**ynthetic **M**inority **O**v
 <div>
 <P ALIGN=CENTER><img src="images/feat_importances_first.png" alt="drawing" width="800"/></div>
 
-**4 features account for 10%-20% of the variance in the data each:**
+**4 features account for more than 5% of the variance in the data each:**
 * Being in Uganda
-* Household population in cthe community
+* Household population in the community
 * Age of the water point (since original consturction)
 * Being an "other" water point type
 
@@ -159,9 +160,14 @@ False negative| True positive<br />
 
 **Partial dependency plots to understand the direction of influence for most important features:**<br />
  <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¯\_(ツ)_/¯
+ <div>
+<P ALIGN=CENTER><img src=".png" alt="drawing" width="600"/></div><br />
+ <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <br />
  <br />
+ 
+ ### Study ongoing...
  
 ## Logistic Regression:
 <div>
@@ -176,7 +182,7 @@ False negative| True positive<br />
 ## **Future work:**
 * Fit a logisitc regression model to triangulate and get a clearer picture of how the target is influenced by the various features in the dataset.
 * Recommend to the clinet to revise the survey after thorough consultation with stakeholders of the dataset to better identify expectations from the analysis.
-* Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking. This would likely clarify why households using water points influences its lieklihood to break.
+* Collect data related to governance, funding, and maintainence for water points so that the models can analyze the contributions of those dynamics on the likelihood of functioning/ breaking. This would likely clarify why households using water points influences its likelihood to break.
 * Run the models on country disaggregated datasets for insights that did not emerge in the entire dataset. Country-level insights and recommendations are likely far more actionable for the client.
 
 
